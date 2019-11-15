@@ -1,0 +1,29 @@
+.find-pwd-result-board{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.find-pwd-result-board>div{
+	font-size: 20px;
+	
+}
+
+.find-pwd-result-board button{
+	margin-top: 20px;
+	margin: 20px 0 10px 10px;
+	width: 80px;
+	height: 30px;
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.find-pwd-result-board button:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}

@@ -1,0 +1,116 @@
+section .my-intake-board{
+	margin-top: 50px;
+}
+
+.my-intake-board .ingestion-img{
+	box-sizing: border-box;
+	width: 100px;
+}
+
+.my-intake-board .ingestion-img-el{
+	background: white;
+}
+
+.my-intake-board .ingestion-name{
+	width: 150px
+}
+
+.my-intake-board .ingestion-allergy{
+	width: 500px;
+}
+
+.my-intake-board .ingestion-allergy-el{
+	text-align: left;
+}
+
+.my-intake-board .ingestion-quantity{
+	width: 80px;
+}
+
+.my-intake-board .ingestion-delete{
+	width: 80px;
+}
+
+.ingestion-quantity-el .quantity-el-set{
+	display: flex;
+	flex-direction: column;
+}
+
+.ingestion-quantity-el .quantity-el-set i{
+	display: inline-block;
+}
+
+.ingestion-quantity-el .quantity-el-set .ingestion-up-btn:hover{
+	cursor: pointer;
+	color: #ff6767;
+}
+
+.ingestion-quantity-el .quantity-el-set .ingestion-down-btn:hover{
+	cursor: pointer;
+	color: #3ca3da;
+}
+
+.ingestion-delete-el input[type="checkbox"]{
+	width: 30px;
+	height: 30px;
+}
+
+.my-intake-board>form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ingestion-btns{
+	display: flex;
+	justify-content: center;
+}
+
+.my-intake-board>form input[type="submit"]{
+	margin: 20px 0 10px 10px;
+	width: 80px;
+	height: 30px;
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.my-intake-board>form input[type="button"]{
+	width: 35px;
+	height: 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 8px;
+	font-weight: bold;
+}
+
+.my-intake-board .inactive-btn{
+	outline: none;
+	background: #b1b1b1;
+	color: #c4c3c3;
+}
+
+.my-intake-board .active-btn{
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+}
+
+.my-intake-board>form input[type="submit"]:hover,
+.my-intake-board .active-btn:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}
+
+.table-nutrition{
+	width: 800px;
+	display: flex;
+	justify-content: center;
+}
+
+.table-nutrition>.my-nutrition{
+	margin-left: 50px;
+}

@@ -1,0 +1,82 @@
+header{
+	width: 100%;
+	background: #222831;
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+	top:0;
+	z-index: 8;
+}
+
+header .header-menu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.header-menu .home-btn a{
+	color: #3ca3da;
+	font-size: 30px;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+
+.header-menu .member-info{
+	display: flex;
+	justify-content: flex-end;
+	color: 	#ffffff;
+}
+
+.member-info .member-btn button{
+	background: #3ca3da;
+	border: none;
+	border-radius: 5px;
+	margin: 5px;
+	color: #eeecec;
+	width: 80px;
+	font-weight: bold;
+}
+
+.member-info .member-btn button:hover{
+	cursor: pointer;
+	background: #eeecec;
+	color: #3ca3da;
+}
+
+header .login-board{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-board form{
+	padding: 20px;
+	width: 720px;
+	display: flex;
+	align-items: center;
+}
+
+.login-board form .row{
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+}
+
+.login-board .row-label{
+	padding-right: 5px;
+	color: #eeecec;
+}
+
+.login-board .buttons button{
+	margin: 5px;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+}
+
+.login-board .buttons button:hover{
+	cursor: pointer;
+	background: #eeecec;
+	color: #3ca3da;
+}

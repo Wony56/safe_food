@@ -1,0 +1,48 @@
+.find-pwd-board{
+	margin-top: 30px;
+}
+
+.find-pwd-board form{
+	display: flex;
+	flex-direction: column;
+}
+
+.find-pwd-board form table,
+.find-pwd-board form td,
+.find-pwd-board form th{
+	border: none;
+}
+
+.find-pwd-board form th{
+	padding-right: 10px;
+}
+
+.find-pwd-board input{
+	background: #eeecec;
+	border-radius: 0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+
+.find-btns{
+	display: flex;
+	justify-content: center;
+}
+
+.find-btns button{
+	margin-top: 20px;
+	margin: 20px 0 10px 10px;
+	width: 80px;
+	height: 30px;
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.find-btns button:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="likesMapper">
+	<insert id="addLikes" parameterType="likes">
+		INSERT INTO
+		likes (id,
+		foodName, quantity)
+		VALUES ( #{id}, #{food.foodName}, #{quantity})
+	</insert>
+
+	<update id="updateLikesQuantity" parameterType="likes">
+		UPDATE likes SET
+		quantity = #{quantity}
+		WHERE id = #{id}
+		and foodName = #{food.foodName}
+	</update>
+
+	<update id="updateLikesDown" parameterType="likes">
+		UPDATE likes SET
+		quantity = quantity-1
+		WHERE id = #{id}
+		and foodName = #{food.foodName}
+	</update>
+
+	<update id="updateLikesUp" parameterType="likes">
+		UPDATE likes SET
+		quantity = quantity+1
+		WHERE id = #{id}
+		and foodName = #{food.foodName}
+	</update>
+
+	<delete id="deletelikes" parameterType="likes">
+		DELETE FROM likes
+		WHERE id
+		= #{id}
+		and foodName = #{food.foodName}
+	</delete>
+
+	<select id="selectLikes" parameterType="likes"
+		resultType="likes">
+		SELECT id, foodName, quantity from likes
+		WHERE id = #{id}
+		and foodName = #{food.foodName}
+	</select>
+
+	<select id="selectLikesById" resultType="likes">
+		SELECT id, foodName,
+		quantity from likes
+		WHERE id = #{id}
+	</select>
+</mapper>

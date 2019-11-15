@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchMapper">
+	<insert id="addSearch" parameterType="search">
+		INSERT INTO recent_search(id, keyword, search_date)
+		VALUES (#{id}, #{keyword}, NOW() )
+	</insert>
+	
+	<update id="updateSearch" parameterType="search">
+		UPDATE recent_search SET search_date = NOW()
+		WHERE id = #{id} and keyword = #{keyword}
+	</update>
+	
+	<select id="selectSearch" parameterType="search" resultType="search">
+		SELECT id, keyword, search_date FROM recent_search
+		WHERE id = #{id} AND keyword LIKE '${keyword}%' ORDER BY search_date LIMIT 10;
+	</select>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+	<resultMap type="member" id="memberResultMap">
+		<result property="id" column="id" jdbcType="VARCHAR"/>
+		<result property="password" column="password" jdbcType="VARCHAR"/>
+		<result property="name" column="name" jdbcType="VARCHAR"/>
+		<result property="address" column="address" jdbcType="VARCHAR"/>
+		<result property="phone" column="phone" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<!-- insert -->
+	<insert id="addMember" parameterType="member">
+		INSERT INTO member (id, password, name, address, phone)
+		VALUES (#{id}, #{password}, #{name}, #{address}, #{phone})
+	</insert>
+	
+	<!-- update -->
+	<update id="updateMember" parameterType="member">
+		UPDATE member
+		SET password=#{password}, 
+			name = #{name}, 
+			address = #{address}, 
+			phone = #{phone}
+	</update>
+	
+	<!-- delete -->
+	<delete id="deleteMember" parameterType="string">
+		DELETE FROM member
+		WHERE id = #{value}
+	</delete>
+	
+	<!-- getMember -->
+	<select id="logIn" parameterType="member" resultMap="memberResultMap">
+		SELECT id, password, name, address, phone
+		FROM member
+		WHERE id = #{id} AND password = #{password}
+	</select>
+	
+	<select id="findPassword" parameterType="member" resultMap="memberResultMap">
+		SELECT id, password, name, address, phone
+		FROM member
+		WHERE id = #{id} AND phone = #{phone}
+	</select>
+	
+</mapper>

@@ -1,0 +1,110 @@
+section .my-likes-board{
+	margin-top: 50px;
+}
+
+.my-likes-board .likes-img{
+	width: 100px;
+}
+
+.my-likes-board .likes-img-el{
+	background: white;
+}
+
+.my-likes-board .likes-name{
+	width: 150px;
+}
+
+.my-likes-board .likes-allergy{
+	width: 500px;
+}
+
+.my-likes-board .likes-allergy-el{
+	text-align: left;
+}
+
+.my-likes-board .likes-quantity{
+	width: 80px;
+}
+
+.my-likes-board .likes-delete{
+	width: 80px;
+}
+
+.likes-quantity-el .quantity-el-set{
+	display: flex;
+	flex-direction: column;
+}
+
+.likes-quantity-el .quantity-el-set i{
+	display: inline-block;
+}
+
+.likes-quantity-el .quantity-el-set .likes-up-btn:hover{
+	cursor: pointer;
+	color: #ff6767;
+}
+
+.likes-quantity-el .quantity-el-set .likes-down-btn:hover{
+	cursor: pointer;
+	color: #3ca3da;
+}
+
+.likes-delete-el input[type="checkbox"]{
+	width: 30px;
+	height: 30px;
+}
+
+.my-likes-board>form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.my-likes-board>form input[type="submit"]{
+	margin-top: 20px;
+	width: 80px;
+	height: 30px;
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.my-likes-board>form input[type="button"]{
+	width: 35px;
+	height: 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 8px;
+	font-weight: bold;
+}
+
+.my-likes-board .inactive-btn{
+	outline: none;
+	background: #b1b1b1;
+	color: #c4c3c3;
+}
+
+.my-likes-board .active-btn{
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+}
+
+.my-likes-board>form input[type="submit"]:hover,
+.my-likes-board .active-btn:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}
+
+.table-nutrition{
+	width: 800px;
+	display: flex;
+	justify-content: center;
+}
+
+.table-nutrition>.my-nutrition{
+	margin-left: 50px;
+}

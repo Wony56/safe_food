@@ -1,0 +1,95 @@
+section{
+	margin-top: 20px;
+}
+
+section .view-table-board{
+	width: 900px;
+}
+
+section .view-table-board>table{
+	width: 100%;
+}
+
+.view-table-board .table-img{
+	background: white;
+}
+
+.view-table-board .table-quantity .quantity-set{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.quantity-set>input[type="number"]{
+	width: 80px;
+	height: 20px;
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 0;
+}
+
+.quantity-set>.up-down-btns{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+}
+
+.up-down-btns>i{
+	cursor: pointer;
+}
+
+.up-down-btns>#up-btn:hover{
+	color: #ff6767;
+}
+
+.up-down-btns>#down-btn:hover{
+	color: #3ca3da;
+}
+
+.table-quantity button{
+	cursor: pointer;
+	width: 60px;
+	height: 30px;
+	margin-left: 5px;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.table-quantity button:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}
+
+.nutrition-board{
+	margin-top: 50px;
+}
+
+.nutrition-board>table{
+	width: 700px;
+}
+
+.nutrition-board .table-graph{
+	background: white;
+}
+
+section button{
+	margin-top: 20px;
+	margin: 20px 0 10px 10px;
+	width: 80px;
+	height: 30px;
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+section button:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}

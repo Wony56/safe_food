@@ -1,0 +1,56 @@
+.notice-register-board{
+	margin-top: 50px;
+}
+
+.notice-register-board textarea{
+	resize: none;
+	padding: 10px;
+	background: #eeecec;
+}
+
+.notice-register-board table,
+.notice-register-board tr,
+.notice-register-board td,
+.notice-register-board th{
+	border: none;
+}
+
+.notice-register-board table{
+	border-top: 2px solid #222831;
+}
+
+.notice-register-board tr{
+	border-bottom: 1px solid #222831;
+}
+
+.notice-register-board th{
+	border-right: 1px solid #222831;
+	padding-right: 80px;
+}
+
+.notice-register-board td{
+	padding: 15px;
+	padding-right: 0;
+}
+
+.notice-register-board .notice-btns{
+	display: flex;
+	justify-content: center;
+}
+
+.notice-btns button{
+	margin: 20px 0 10px 10px;
+	width: 80px;
+	height: 30px;
+	cursor: pointer;
+	background: #3ca3da;
+	color: #eeecec;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.notice-btns button:hover{
+	background: #ffffff;
+	color: #3ca3da;
+}

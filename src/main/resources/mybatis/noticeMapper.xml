@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeMapper">
+	<resultMap type="notice" id="noticeResultMap">
+		<result property="idx" column="idx" jdbcType="INTEGER"/>
+		<result property="title" column="title" jdbcType="VARCHAR"/>
+		<result property="content" column="content" jdbcType="VARCHAR"/>
+		<result property="writer" column="writer" jdbcType="VARCHAR"/>
+		<result property="date" column="register_date" jdbcType="DATETIMEOFFSET"/>
+	</resultMap>
+	
+	<insert id="addNotice" parameterType="notice">
+		INSERT INTO notice (title, content, writer, register_date)
+		VALUES (#{title}, #{content}, #{writer}, now())
+	</insert>
+	
+	<update id="updateNotice" parameterType="notice">
+		UPDATE notice
+		SET
+			title = #{title},
+			content = #{content}
+		WHERE
+			idx = #{idx}
+	</update>
+	
+	<delete id="deleteNotice" parameterType="Integer">
+		DELETE FROM notice
+		WHERE idx = #{value}
+	</delete>
+	
+	<select id="getNotice" parameterType="Integer" resultMap="noticeResultMap">
+		SELECT idx, title, content, writer, register_date
+		FROM notice
+		WHERE idx = #{value}		
+	</select>
+	
+	<select id="getAllNotice" resultMap="noticeResultMap">
+		SELECT idx, title, content, writer, register_date
+		FROM notice
+		ORDER BY register_date DESC
+	</select>
+	
+</mapper>

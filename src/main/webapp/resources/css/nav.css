@@ -1,0 +1,15 @@
+nav{
+	display: flex;
+	justify-content: center;
+}
+
+nav .nav-menu{
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	padding: 40px 0;
+}
+
+.nav-menu .menu{
+	margin: 0 40px;
+}

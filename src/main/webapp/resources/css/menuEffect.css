@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+.menu-item a{
+	display: block;
+	position: relative;
+	padding: 10px 20px;
+	font-size: 15px;
+	letter-spacing: 2px;
+	overflow: hidden;
+}
+
+.menu-item a:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -100%;
+	background: #353535;
+	transition: 0.2s;
+	transition-delay: 0.2s;
+}
+
+.menu-item a:hover:before{
+	left: 100%;
+}
+
+.menu-item a span:nth-child(odd){
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: #353535;
+	transition: 0.5s ease-in-out;
+}
+
+.menu-item a span:nth-child(1){
+	top: 0;
+	left: 50%;
+}
+
+.menu-item a span:nth-child(3){
+	bottom: 0;
+	right: 50%;
+}
+
+.menu-item a:hover span:nth-child(1){
+	top: 0;
+	left: -50%;
+}
+
+.menu-item a:hover span:nth-child(3){
+	bottom: 0;
+	right: -50%;
+}
+
+.menu-item a span:nth-child(even){
+	position: absolute;
+	display: block;
+	width: 2px;
+	height: 100%;
+	background: #353535;
+	transition: 0.5s ease-in-out;
+}
+
+.menu-item a span:nth-child(2){
+	top: 50%;
+	left: 0;
+}
+
+.menu-item a span:nth-child(4){
+	bottom: 50%;
+	right: 0;
+}
+
+.menu-item a:hover span:nth-child(2){
+	top: -50%;
+	left: 0;
+}
+
+.menu-item a:hover span:nth-child(4){
+	bottom: -50%;
+	right: 0;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ingestionMapper">
+	<insert id="addIngestion" parameterType="ingestion">
+		INSERT INTO
+		ingestion
+		(id, foodName, quantity)
+		VALUES ( #{id}, #{food.foodName}, #{quantity})
+	</insert>
+
+	<update id="updateIngestionQuantity" parameterType="ingestion">
+		UPDATE
+		ingestion SET
+		quantity = #{quantity}
+		WHERE id = #{id}
+		and foodName =
+		#{food.foodName}
+	</update>
+
+	<update id="updateIngestionDown" parameterType="ingestion">
+		UPDATE ingestion
+		SET
+		quantity = quantity-1
+		WHERE id = #{id}
+		and foodName =
+		#{food.foodName}
+	</update>
+
+	<update id="updateIngestionUp" parameterType="ingestion">
+		UPDATE ingestion
+		SET
+		quantity = quantity+1
+		WHERE id = #{id}
+		and foodName =
+		#{food.foodName}
+	</update>
+
+	<delete id="deleteIngestion" parameterType="ingestion">
+		DELETE FROM ingestion
+		WHERE id = #{id}
+		and foodName = #{food.foodName}
+	</delete>
+
+	<select id="selectIngestion" parameterType="ingestion"
+		resultType="ingestion">
+		SELECT id, foodName, quantity from ingestion
+		WHERE id =
+		#{id}
+		and foodName = #{food.foodName}
+	</select>
+
+	<select id="selectIngestionById" parameterType="string"
+		resultType="ingestion">
+		SELECT id, foodName, quantity from ingestion
+		WHERE id =
+		#{value}
+	</select>
+</mapper>

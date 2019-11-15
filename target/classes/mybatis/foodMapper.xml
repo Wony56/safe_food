@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="foodMapper">
+	<resultMap type="food" id="foodResultMap">
+		<result property="foodName" column="foodName" jdbcType="VARCHAR"/>
+		<result property="maker" column="maker" jdbcType="VARCHAR"/>
+		<result property="img" column="img" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="select-food">
+		SELECT food.foodName, food.maker, food.imgurl
+		FROM food
+	</sql>
+
+	<insert id="addFood" parameterType="food">
+		INSERT INTO food (foodName, maker, imgurl)
+		VALUES (#{foodName}, #{maker}, #{img})
+	</insert>
+	
+	<update id="updateFood" parameterType="food">
+		UPDATE food
+		SET maker = #{maker}, imgurl = #{img}
+	</update>
+	
+	<delete id="deleteFood" parameterType="string">
+		DELETE FROM food
+		WHERE foodName = #{value}
+	</delete>
+	
+	<select id="getFoodByName" parameterType="string" resultMap="foodResultMap">
+		<include refid="select-food"/>
+		WHERE foodName LIKE '%${value}%'
+	</select>
+	
+	<select id="getFoodByMaker" parameterType="string" resultMap="foodResultMap">
+		<include refid="select-food"/>
+		WHERE maker LIKE '%${value}%'
+	</select>
+	
+	<select id="getFoodByMaterial" parameterType="string" resultMap="foodResultMap">
+		<include refid="select-food"/>
+		LEFT JOIN material
+		ON food.foodName = material.foodName
+		WHERE mat LIKE '%${value}%'
+	</select>
+	
+	<select id="getAllFood" resultMap="foodResultMap">
+		<include refid="select-food"/>
+	</select>
+	
+	<select id="getMaterial" parameterType="string" resultType="material">
+		SELECT mat FROM material
+		WHERE foodName = #{value}
+	</select>
+	
+	<select id="getFoodInfo" parameterType="string" resultType="food">
+		select foodName, maker, imgurl from food
+		where foodName = #{value}
+	</select>
+
+	<resultMap type="nutrition" id="nutritionMap">
+		<result property="foodName" column="foodName" jdbcType="VARCHAR"/>
+		<result property="dailyServing" column="serving" jdbcType="DOUBLE"/>
+		<result property="callory" column="cal" jdbcType="DOUBLE"/>
+		<result property="carbo" column="carbo" jdbcType="DOUBLE"/>
+		<result property="protein" column="protein" jdbcType="DOUBLE"/>
+		<result property="fat" column="fat" jdbcType="DOUBLE"/>
+		<result property="sugars" column="sugar" jdbcType="DOUBLE"/>
+		<result property="natrium" column="natrium" jdbcType="DOUBLE"/>
+		<result property="cholesterol" column="chol" jdbcType="DOUBLE"/>
+		<result property="saturatedFattyAcid" column="acidfat" jdbcType="DOUBLE"/>
+		<result property="transFat" column="transfat" jdbcType="DOUBLE"/>
+	</resultMap>
+	
+	<select id="getNutrition" parameterType="string" resultMap="nutritionMap">
+		select foodName, serving, cal, carbo, protein, fat, sugar, natrium, chol, acidfat, transfat
+		from nutrition
+		where foodName = #{value}
+	</select>
+</mapper>

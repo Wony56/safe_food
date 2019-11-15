@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'yg-jalnan';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: yg-jalnan;
+	background: #eeecec;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+header{
+	flex: 0 1 auto;
+}
+
+nav{
+	flex: 0 1 auto;
+}
+
+.banner{
+	flex: 0 1 auto;
+}
+
+section{
+	flex: 1 1 auto;
+}
+
+footer{
+	flex: 0 1 auto;
+}
+
+button:focus {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+input {
+	border-radius: 5px;
+}
+
+table, th, td{
+	border: 2px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

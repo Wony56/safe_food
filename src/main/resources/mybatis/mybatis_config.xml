@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="config/dbconn.properties"/>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.ssafy.model.Ingestion" alias="ingestion" />
+		<typeAlias type="com.ssafy.model.Likes" alias="likes" />
+		<typeAlias type="com.ssafy.model.Member" alias="member"/>
+		<typeAlias type="com.ssafy.model.Food" alias="food"/>
+		<typeAlias type="com.ssafy.model.Material" alias="material"/>
+		<typeAlias type="com.ssafy.model.Nutrition" alias="nutrition"/>
+		<typeAlias type="com.ssafy.model.Allergy" alias="allergy"/>
+		<typeAlias type="com.ssafy.model.Notice" alias="notice"/>
+		<typeAlias type="com.ssafy.model.Best" alias="best"/>
+		<typeAlias type="com.ssafy.model.Search" alias="search"/>
+	</typeAliases>
+	
+	<environments default="aaa">
+		<environment id="aaa">
+			<transactionManager type="JDBC"/>
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${db.driverClassName}"/>
+				<property name="url" value="${db.url}"/>
+				<property name="username" value="${db.userName}"/>
+				<property name="password" value="${db.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="mybatis/ingestionMapper.xml" />
+		<mapper resource="mybatis/likesMapper.xml" />
+		<mapper resource="mybatis/memberMapper.xml" />
+		<mapper resource="mybatis/foodMapper.xml"/>
+		<mapper resource="mybatis/allergyMapper.xml"/>
+		<mapper resource="mybatis/noticeMapper.xml"/>
+		<mapper resource="mybatis/bestMapper.xml"/>
+		<mapper resource="mybatis/searchMapper.xml"/>
+	</mappers>
+</configuration>
